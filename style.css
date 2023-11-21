@@ -1,0 +1,18 @@
+.all-data-container{
+    display: none;
+}
+.all-data-container.active{
+    display: block;
+}
+.user-not-found{
+    display: none;
+}
+.user-not-found.active{
+    display: block;
+}
+.loader-screen{
+    display: none;
+}
+.loader-screen.active{
+    display: block;
+}
