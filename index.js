@@ -58,7 +58,7 @@ async function renderUserData(data){
     userImg.src=data.avatar_url;
     userKaName.innerHTML=data.name;
     gitUserName.innerHTML=`@${data.login}`;
-    joinedDate.innerHTML=`Joined On: ${new Date().toDateString(data.created_at)}`;
+    joinedDate.innerHTML=` ${new Date().toDateString(data.created_at)}`;
     bio.innerHTML=data.bio||"This Profile has no Bio";
     repos.innerHTML=data.public_repos||'0';
     followers.innerHTML=data.followers||'0';
