@@ -27,6 +27,7 @@ const socialImg=document.querySelectorAll(".social-img");
 const searchInput=document.querySelector("[data-searchInput]");
 searchForm.addEventListener("submit",(e)=>{
     e.preventDefault();
+    allDataContainer.classList.remove("active");
     let userName=searchInput.value;
     fetchUserData(userName);
    
@@ -108,7 +109,7 @@ function dayFilter(){
     allDataContainer.style.backgroundColor='#fefefe';
     userDataContainer.style.backgroundColor='#f6f8ff';
     bodyEle.style.color='#4b6a9b';
-    
+
     userDataValue.forEach(ele =>{
         ele.style.color="#2b3442"
     });

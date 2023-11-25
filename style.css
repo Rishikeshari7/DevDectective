@@ -17,6 +17,7 @@
 }
 .loader-screen.active{
     display: block;
+    margin-top: 2rem;
     padding-left: 20px;
 }
 .loader-screen p{
@@ -166,17 +167,23 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    row-gap: 0.875rem;
+    row-gap: 1rem;
+    /* column-gap: 1rem; */
+    width: 100%;
+    float: left;
     
 }
 .social{
     display: flex;
-    gap: 0.875rem;
-    justify-content: center;
+    gap: 1rem;
+    margin-left: 3.2rem;
+    
 }
 .social-img{
     opacity:0.5;
+    float: left;
 }
 .social-img.active{
     opacity:1;
+    filter: brightness(100);
 }
