@@ -16,7 +16,8 @@
     <section>
         <nav>
             <h1>Dev Dective</h1>
-            <p>Dark <img src="./Images/moon-icon.svg" alt="Sun&Moon"></p>
+            <p id="dark" class="theme">Dark <img src="./Images/moon-icon.svg" alt="Moon"></p>
+            <p id="light" class="theme">Light <img src="Images/sun-icon.svg" alt="sun"></p>
         </nav>
         <form class="form-container" id="form-cont">
             <input class="form-input" type="text" placeholder="Enter name of user..." data-searchInput >
@@ -24,14 +25,13 @@
         </form>
         <main class="all-data-container">
            <div class="profile-header">
-                <img data-userImg  width="80" height="80">
+                <img data-userImg  width="90" height="90">
                 <div class="profile-name-container">
                     <div class="profile-name">
                         <p data-name>Name</p>
                         <a target="_blank" data-userName>User Name</a>
                     </div>
                     <div class="user-joined">
-                        <p>Joined On:</p>
                         <p data-Date>Date</p>
                     </div>
                     
@@ -41,32 +41,32 @@
             <div class="user-data-container">
                 <div class="repo">
                     <p class="user-data-para">Repos</p>
-                    <p data-repos></p>
+                    <p class="user-data-value" data-repos></p>
                 </div>
                 <div class="followers">
                     <p class="user-data-para">followers</p>
-                    <p data-followers></p>
+                    <p class="user-data-value" data-followers></p>
                 </div>
                 <div class="following">
                     <p class="user-data-para">Following</p>
-                    <p data-following></p>
+                    <p class="user-data-value" data-following></p>
                 </div>
             </div>
             <div class="other-info-container">
-                <div class="location">
-                    <img src="Images/location-icon.svg" alt="Location">
+                <div class="social location">
+                    <img class="social-img" src="Images/location-icon.svg" alt="Location">
                     <p data-location></p>
                 </div>
-                <div class="twitter">
-                    <img src="Images/twitter-icon.svg" alt="twitter">
+                <div class="social twitter">
+                    <img class="social-img" src="Images/twitter-icon.svg" alt="twitter">
                     <p data-twitter></p>
                 </div>
-                <div class="link">
-                    <img src="Images/website-icon.svg" alt="links">
+                <div class="social link">
+                    <img class="social-img" src="Images/website-icon.svg" alt="links">
                     <p data-link></p>
                 </div>
-                <div class="business">
-                    <img src="Images/company-icon.svg" alt="business">
+                <div class="social business">
+                    <img class="social-img" src="Images/company-icon.svg" alt="business">
                     <p data-business></p>
                 </div>
             </div>

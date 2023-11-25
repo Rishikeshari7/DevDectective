@@ -15,6 +15,14 @@ const searchForm=document.querySelector(".form-container");
 const allDataContainer=document.querySelector(".all-data-container");
 const userFound=document.querySelector(".user-not-found");
 const loaderScreen=document.querySelector(".loader-screen");
+const dark=document.querySelector("#dark");
+const light=document.querySelector("#light");
+// ---------------color changing element-----------------------
+const bodyEle=document.body;
+const formInput=document.querySelector(".form-input");
+const userDataContainer=document.querySelector(".user-data-container");
+const userDataValue=document.querySelectorAll(".user-data-value");
+const socialImg=document.querySelectorAll(".social-img");
 
 const searchInput=document.querySelector("[data-searchInput]");
 searchForm.addEventListener("submit",(e)=>{
@@ -59,7 +67,7 @@ async function renderUserData(data){
     userKaName.innerHTML=data.name;
     gitUserName.innerHTML=`@${data.login}`;
     gitUserName.href=data.html_url;
-    joinedDate.innerHTML=` ${new Date().toDateString(data.created_at)}`;
+    joinedDate.innerHTML= `Joined On: ${(new Date(data.created_at).getDate()) + "/"+ (new Date(data.created_at).getMonth())+"/"+(new Date(data.created_at).getFullYear())}`;
     bio.innerHTML=data.bio||"This Profile has no Bio";
     repos.innerHTML=data.public_repos||'0';
     followers.innerHTML=data.followers||'0';
@@ -68,4 +76,43 @@ async function renderUserData(data){
     twitter.innerHTML=data.twitter_username||'Not Available';
     link.innerHTML=data.email||'Not Available';
     business.innerHTML=data.company||'Not Available';
+}
+// =============================dark&light==================================
+dark.addEventListener("click",nightFilter);
+light.addEventListener("click",dayFilter);
+
+function nightFilter(){
+    light.classList.add("active");
+    dark.classList.add("inactive");
+    bodyEle.style.backgroundColor='#141D2F';
+    formInput.style.backgroundColor='#1E2A47';
+    formInput.style.color='#ffffff';
+    allDataContainer.style.backgroundColor='#1E2A47';
+    userDataContainer.style.backgroundColor='#141D2F';
+    bodyEle.style.color='#FFFFFF';
+
+    userDataValue.forEach(ele =>{
+        ele.style.color="#ffffff"
+    });
+    socialImg.forEach(ele => {
+        ele.classList.add("active");
+    });
+}
+
+function dayFilter(){
+    light.classList.remove("active");
+    dark.classList.remove("inactive");
+    bodyEle.style.backgroundColor='#f6f8ff';
+    formInput.style.backgroundColor='#fefefe';
+    formInput.style.color='#4b6a9b';
+    allDataContainer.style.backgroundColor='#fefefe';
+    userDataContainer.style.backgroundColor='#f6f8ff';
+    bodyEle.style.color='#4b6a9b';
+    
+    userDataValue.forEach(ele =>{
+        ele.style.color="#2b3442"
+    });
+    socialImg.forEach(ele => {
+        ele.classList.remove("active");
+    });
 }
